@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+   
+	{% if data %}
+	<h3>{{data}}</h3>
+	{% else %}
+
+	<!-- <a href="/logout">Logout</a> <br> <br> -->
+	<button><a href="/logout" data-toggle="modal" data-target="#logoutModal">logout</a></button>
+	<h1>Hello World</h1>
+	{% endif %}
+
+{% else %}
+
+
+<!--<img src="static/img/login.png" alt="">-->
+
+<div class="Loginbox" >
+
+
+<center><h2><b>Kindly Login or Register!</b></h2></center>
+	<br><br><br>
+				<a href="/login" class="btn form-control btn-success btn-lg active">Login</a>
+
+				<a href="/register" class="btn form-control btn-primary btn-lg active">Register</a>
+
+	</div>
+
+
+
+{% endif %}
+{% endblock %}
